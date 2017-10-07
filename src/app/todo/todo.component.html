@@ -1,0 +1,12 @@
+<input type="text" [(ngModel)]="currentLabel">
+<button (click)="addTodo()">Add todo</button>
+
+<div *ngFor="let todo of todoList">
+  <input type="checkbox"
+    (change)="toggleState(todo)"
+    [checked]="todo.completed">
+
+    {{ todo.label }}
+
+  <button (click)="removeTodo(todo)">X</button>
+</div>
